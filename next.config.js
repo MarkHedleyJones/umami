@@ -68,6 +68,15 @@ const headers = [
     source: TRACKER_SCRIPT,
     headers: trackerHeaders,
   },
+  {
+    source: '/api/:path*',
+    headers: [
+      {
+        key: 'Cache-Control',
+        value: 'no-store',
+      },
+    ],
+  },
 ];
 
 const rewrites = [];
